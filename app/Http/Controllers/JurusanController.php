@@ -29,7 +29,12 @@ class JurusanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $jur = new Jurusan;
+        $jur->kode = $request->kode;
+        $jur->jurusan = $request->nama;
+        $jur->save();
+
+        return redirect('/jurusan/');
     }
 
     /**

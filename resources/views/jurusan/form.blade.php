@@ -32,7 +32,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Jurusan</label>
-                    <input type="text" class="form-control" name="jurusan">
+                    <input type="text" class="form-control" name="nama">
                 </div>
                 <button type="submit" class="btn btn-primary">Tambah Data</button>
             </form>
