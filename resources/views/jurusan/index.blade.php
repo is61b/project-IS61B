@@ -3,9 +3,9 @@
 @section('judul','Data Jurusan')
 @section('bc')
     <ol class="breadcrumb float-sm-right">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item active">Data Jurusan</li>
-  </ol>
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active">Data Jurusan</li>
+    </ol>
 @endsection
 
 @section('css')
@@ -77,10 +77,13 @@
                 <tbody>
                     @forelse ($jur as $item)
                         <tr>
-                            <td>Trident</td>
-                            <td>Internet Explorer 4.0</td>
-                            <td>Win 95+</td>
-                            <td> 4</td>
+                            <td>{{$nomor++}}</td>
+                            <td>{{$item->kode}}</td>
+                            <td>{{$item->jurusan}}</td>
+                            <td>
+                                <a href="/jurusan/edit/{{$item->id}}" class="btn btn-info btn-xs"><i class="fa fa-pencil-alt"></i></a>
+                                <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
+                            </td>
                         </tr>
                     @empty
                         <tr>
