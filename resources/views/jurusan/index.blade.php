@@ -53,7 +53,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-        <h3 class="card-title">Data Jurusan</h3>
+        <a href="/jurusan/form/" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Data</a>
 
         <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -75,12 +75,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Trident</td>
-                        <td>Internet Explorer 4.0</td>
-                        <td>Win 95+</td>
-                        <td> 4</td>
-                    </tr>
+                    @forelse ($jur as $item)
+                        <tr>
+                            <td>Trident</td>
+                            <td>Internet Explorer 4.0</td>
+                            <td>Win 95+</td>
+                            <td> 4</td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="4">Tidak Ada Data</td>
+                        </tr>
+                    @endforelse
+
                 </tfbosy>
             </table>
         </div>
