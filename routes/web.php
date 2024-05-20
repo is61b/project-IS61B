@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\JurusanController;
+use App\Http\Controllers\MahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,7 @@ Route::post('/jurusan/store/', [JurusanController::class, 'store'])->middleware(
 Route::get('/jurusan/edit/{id}', [JurusanController::class, 'edit'])->middleware('auth');
 Route::put('/jurusan/{id}', [JurusanController::class, 'update'])->middleware('auth');
 Route::delete('/jurusan/{id}', [JurusanController::class, 'destroy'])->middleware('auth');
+
+//data mahasiswa
+Route::get('/mahasiswa/', [MahasiswaController::class, 'index'])->middleware('auth');
+Route::get('/mahasiswa/form/', [MahasiswaController::class, 'create'])->middleware('auth');
