@@ -32,7 +32,18 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $mhs = new Mahasiswa;
+        $mhs->nim = $request->nim;
+        $mhs->nama = $request->nama;
+        $mhs->tempat = $request->tempat;
+        $mhs->tanggal = $request->tanggal;
+        $mhs->alamat = $request->alamat;
+        $mhs->jk = $request->jk;
+        $mhs->jurusans_id = $request->jurusan;
+        $mhs->agama = $request->agama;
+        $mhs->save();
+
+        return redirect('/mahasiswa/');
     }
 
     /**

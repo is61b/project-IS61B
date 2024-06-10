@@ -35,3 +35,4 @@ Route::delete('/jurusan/{id}', [JurusanController::class, 'destroy'])->middlewar
 //data mahasiswa
 Route::get('/mahasiswa/', [MahasiswaController::class, 'index'])->middleware('auth');
 Route::get('/mahasiswa/form/', [MahasiswaController::class, 'create'])->middleware('auth');
+Route::post('/mahasiswa/store/', [MahasiswaController::class, 'store'])->middleware('auth');
