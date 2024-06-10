@@ -81,7 +81,7 @@
                             <td>{{$nomor++}}</td>
                             <td>{{$item->nim}}</td>
                             <td>{{$item->nama}}</td>
-                            <td>{{$item->jurusans_id}}</td>
+                            <td>{{$item->jurusans->kode}} - {{$item->jurusans->jurusan}}</td>
                             <td>
                                 <a href="#">Detail</a>
                                 <a href="/jurusan/edit/{{$item->id}}" class="btn btn-info btn-xs"><i class="fa fa-pencil-alt"></i></a>
