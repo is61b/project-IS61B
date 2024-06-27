@@ -134,7 +134,7 @@
 
                                                         <tr>
                                                             <td>Foto</td>
-                                                            <th scope="row"><img src="" width="50" alt=""></th>
+                                                            <th scope="row"><img src="{{ asset('/foto/'.$item->foto) }}" width="100" alt=""></th>
                                                         </tr>
                                                 </tbody>
                                             </table>
