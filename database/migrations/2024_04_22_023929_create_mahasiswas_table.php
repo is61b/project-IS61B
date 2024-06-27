@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('jk');
             $table->bigInteger('jurusans_id');
             $table->string('agama');
+            $table->string('foto');
             $table->timestamps();
         });
     }

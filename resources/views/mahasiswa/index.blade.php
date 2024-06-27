@@ -107,7 +107,35 @@
                                                             <td>Nama</td>
                                                             <th scope="row">{{$item->nama}}</th>
                                                         </tr>
+                                                        <tr>
+                                                            <td>Tempat Lahir</td>
+                                                            <th scope="row">{{$item->tempat}}</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Tanggal Lahir</td>
+                                                            <th scope="row">{{$item->tanggal}}</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Alamat</td>
+                                                            <th scope="row">{{$item->alamat}}</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jenis Kelamin</td>
+                                                            <th scope="row">{{$item->jk}}</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jurusan</td>
+                                                            <th scope="row">{{$item->jurusans->jurusan}}</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Agama</td>
+                                                            <th scope="row">{{$item->agama}}</th>
+                                                        </tr>
 
+                                                        <tr>
+                                                            <td>Foto</td>
+                                                            <th scope="row"><img src="" width="50" alt=""></th>
+                                                        </tr>
                                                 </tbody>
                                             </table>
                                         </div>
