@@ -83,14 +83,49 @@
                             <td>{{$item->nama}}</td>
                             <td>{{$item->jurusans->kode}} - {{$item->jurusans->jurusan}}</td>
                             <td>
-                                <a href="#">Detail</a>
+                                <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#detail{{$item->id}}">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+
+                                <!-- Modal Detail-->
+                                <div class="modal fade" id="detail{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Detail {{$item->nama}}</h1>
+                                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table class="table">
+
+                                                <tbody>
+                                                        <tr>
+                                                            <td>NIM</td>
+                                                            <th scope="row">{{$item->nim}}</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Nama</td>
+                                                            <th scope="row">{{$item->nama}}</th>
+                                                        </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+
                                 <a href="/jurusan/edit/{{$item->id}}" class="btn btn-info btn-xs"><i class="fa fa-pencil-alt"></i></a>
 
                                 <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapus{{$item->id}}">
                                     <i class="fa fa-trash"></i>
                                 </button>
 
-                                <!-- Modal -->
+                                <!-- Modal Hapus-->
                                 <div class="modal fade" id="hapus{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                     <div class="modal-content">
