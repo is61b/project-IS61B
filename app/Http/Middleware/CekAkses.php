@@ -18,6 +18,7 @@ class CekAkses
         if(in_array($request->user()->akses,$akses)){
             return $next($request);
         }
+        return redirect('/');
 
     }
 }
