@@ -24,15 +24,22 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//data jurusan
-Route::get('/jurusan/', [JurusanController::class, 'index'])->middleware('auth');
-Route::get('/jurusan/form/', [JurusanController::class, 'create'])->middleware('auth');
-Route::post('/jurusan/store/', [JurusanController::class, 'store'])->middleware('auth');
-Route::get('/jurusan/edit/{id}', [JurusanController::class, 'edit'])->middleware('auth');
-Route::put('/jurusan/{id}', [JurusanController::class, 'update'])->middleware('auth');
-Route::delete('/jurusan/{id}', [JurusanController::class, 'destroy'])->middleware('auth');
+Route::middleware(['auth'])->group(function () {
 
-//data mahasiswa
-Route::get('/mahasiswa/', [MahasiswaController::class, 'index'])->middleware('auth');
-Route::get('/mahasiswa/form/', [MahasiswaController::class, 'create'])->middleware('auth');
-Route::post('/mahasiswa/store/', [MahasiswaController::class, 'store'])->middleware('auth');
+    Route::middleware(['CekAkses:admin'])->group(function () {
+        //data jurusan
+        Route::get('/jurusan/edit/{id}', [JurusanController::class, 'edit']);
+        Route::put('/jurusan/{id}', [JurusanController::class, 'update']);
+        Route::delete('/jurusan/{id}', [JurusanController::class, 'destroy']);
+    });
+
+    Route::get('/jurusan/', [JurusanController::class, 'index']);
+    Route::get('/jurusan/form/', [JurusanController::class, 'create']);
+    Route::post('/jurusan/store/', [JurusanController::class, 'store']);
+
+    //data mahasiswa
+    Route::get('/mahasiswa/', [MahasiswaController::class, 'index']);
+    Route::get('/mahasiswa/form/', [MahasiswaController::class, 'create']);
+    Route::post('/mahasiswa/store/', [MahasiswaController::class, 'store']);
+
+});
