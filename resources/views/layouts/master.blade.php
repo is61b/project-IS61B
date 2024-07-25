@@ -209,7 +209,7 @@
               </p>
             </a>
           </li>
-
+          @if (Auth::user()->akses =="admin")
           <li class="nav-item">
             <a href="/jurusan/" class="nav-link">
               <i class="nav-icon fas fa-building"></i>
@@ -219,6 +219,8 @@
               </p>
             </a>
           </li>
+          @endif
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
