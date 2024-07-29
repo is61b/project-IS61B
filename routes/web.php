@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\MhsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,9 @@ use App\Http\Controllers\MahasiswaController;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/login-mhs', [App\Http\Controllers\MhsController::class, 'login']);
+
 
 Route::middleware(['auth'])->group(function () {
 
