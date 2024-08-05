@@ -1,11 +1,11 @@
 @extends('layouts.master')
-@section('title','Tambah Jurusan')
-@section('judul','Tambah Jurusan')
+@section('title','Tambah Mahasiswa')
+@section('judul','Tambah Mahasiswa')
 @section('bc')
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
         <li class="breadcrumb-item"><a href="#">Data Jurusan</a></li>
-        <li class="breadcrumb-item active">Tambah Jurusan</li>
+        <li class="breadcrumb-item active">Tambah Mahasiswa</li>
     </ol>
 @endsection
 
@@ -28,11 +28,21 @@
                 @csrf
                 <div class="mb-3">
                     <label class="form-label">NIM</label>
-                    <input type="text" class="form-control" name="nim">
+                    <input type="text" value="{{ old('nim') }}" class="form-control @error('nim') is-invalid @else is-valid @enderror" name="nim">
+                    @error('nim')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Nama</label>
-                    <input type="text" class="form-control" name="nama">
+                    <input type="text" value="{{ old('nama') }}" class="form-control @error('nama') is-invalid @enderror" name="nama">
+                    @error('nama')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Tempat Lahir</label>
@@ -87,7 +97,12 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Foto</label>
-                    <input type="file" class="form-control" name="foto" accept="image/*">
+                    <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" accept="image/*">
+                    @error('foto')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <button type="submit" class="btn btn-primary">Tambah Data</button>
             </form>
